@@ -1,0 +1,12 @@
+setup.py
+bin/gwss
+gwss/__init__.py
+gwss/config.py
+gwss/download.py
+gwss/get.py
+gwss/logger.py
+gwss.egg-info/PKG-INFO
+gwss.egg-info/SOURCES.txt
+gwss.egg-info/dependency_links.txt
+gwss.egg-info/requires.txt
+gwss.egg-info/top_level.txt
