@@ -10,6 +10,7 @@ setup(
     author='Ken Spencer / IotaSpencer',
     author_email='me@iotaspencer.me',
     description='get web scripts & styles',
+    long_description='get web scripts and styles',
     packages=['gwss'],
     install_requires=[
         'lastversion~=3.4.6',
