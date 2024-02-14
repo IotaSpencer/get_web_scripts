@@ -8,6 +8,6 @@ import yaml
 import pathlib
 from pathlib import Path
 
-def resolve(package):
-    current_directory = Path(__file__)
+def resolve_pkg(package):
+    current_directory = Path(__file__).parent
     pprint(current_directory)

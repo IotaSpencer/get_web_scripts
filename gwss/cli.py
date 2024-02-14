@@ -2,11 +2,13 @@ from importlib.metadata import version
 import sys
 import os
 from pathlib import Path
+from pprint import pprint
 
 import click
 
-from gwss import gwss
+from gwss import gwss, resolver_config
 from gwss.config import config
+from gwss.resolver import resolve_pkg
 from gwss.utilities import prepare_config, path_validation, squish_info
 
 
@@ -36,14 +38,11 @@ def ls():
 @cli.command(help="get all urls and destination directories for styles and scripts")
 @click.option('--dest-dir', '-d', default='.site')
 def resolve(dest_dir):
+    resolve_cfg = resolver_config.projects
     extension = ''
     for k, v in config.items():
-        match k:
-            case 'script':
-                extension = 'js'
-            case 'style':
-                extension = 'css'
-
+        print("{}".format(v),)
+        resolve_pkg(v)
     resolved_rendered = ''
     click.echo(resolved_rendered)
 

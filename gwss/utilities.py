@@ -9,7 +9,7 @@ from jinja2 import Environment, BaseLoader
 from colorama import Fore, Back, Style
 
 
-tmpl = """
+ls_tmpl = """
 {%- for type, values in config.items() %}
     {{- Style.BRIGHT }}{{- type.upper() }}{{ Style.NORMAL }}
     {% for value in values %}
@@ -17,13 +17,14 @@ tmpl = """
 {% endfor -%}
 {%- endfor -%}
 """
+
 def prepare_config(config: dict) -> str:
     """
 
     :param config:
     :return: str
     """
-    rtmpl = Environment(keep_trailing_newline=False, trim_blocks=True, lstrip_blocks=True, loader=BaseLoader()).from_string(tmpl)
+    rtmpl = Environment(keep_trailing_newline=False, trim_blocks=True, lstrip_blocks=True, loader=BaseLoader()).from_string(ls_tmpl)
     return rtmpl.render(config=config, Style=Style, Fore=Fore, Back=Back)
 
 
