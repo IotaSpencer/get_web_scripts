@@ -5,39 +5,39 @@
 projects = {
     'bootstrap': {
         'dir': 'dist',
-        'scripts': [
-                    'js/bootstrap.min.js',
-                    'js/bootstrap.bundle.min.js'
-        ],
-        'styles': [
-            {'bootstrap-min': 'css/bootstrap.min.css'},
-            {'bootstrap-grid': 'css/bootstrap-grid.min.css'},
-            {'bootstrap-reboot': 'css/bootstrap-reboot.min.css'},
-            {'bootstrap-utilities': 'css/bootstrap-utilities.min.css'}
-        ]
+        'scripts': {
+            'bootstrap': 'js/bootstrap.min.js',
+            'bootstrap-bundle': 'js/bootstrap.bundle.min.js'
+        },
+        'styles': {
+            'bootstrap-min': 'css/bootstrap.min.css',
+            'bootstrap-grid': 'css/bootstrap-grid.min.css',
+            'bootstrap-reboot': 'css/bootstrap-reboot.min.css',
+            'bootstrap-utilities': 'css/bootstrap-utilities.min.css'
+        }
     },
     'htmx': {
         'dir': '.',
-        'scripts': [
-            {'htmx': 'htmx.js'}
-        ]
+        'scripts': {
+            'htmx': 'htmx.js'
+        }
     },
     'jquery': {
         'dir': 'dist',
-        'scripts': [
-            {'jquery': 'jquery.min.js'}
-        ]
+        'scripts': {
+            'jquery': 'jquery.min.js'
+        }
     },
     'react': {
         'dir': 'umd',
-        'scripts': [
-            {'react': 'react.production.min.js'}
-        ]
+        'scripts': {
+            'react': 'react.production.min.js'
+        }
     },
     'tailwindcss': {
         'dir': 'dist',
-        'styles': [
-            {'tailwind': 'tailwind.css'}
-        ]
+        'styles': {
+            'tailwind': 'tailwind.css'
+        }
     }
 }
