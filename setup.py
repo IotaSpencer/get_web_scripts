@@ -17,7 +17,8 @@ setup(
         'aiohttp~=3.9.2',
         'click~=8.1.7',
         'pytest~=8.0.0',
-        'setuptools~=59.6.0'
+        'setuptools~=59.6.0',
+        'furl~=2.1.3'
     ],
     classifiers= [
         "Programming Language :: Python :: 3",
