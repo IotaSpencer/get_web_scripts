@@ -326,8 +326,7 @@ texinfo_documents = [
 # -- A random example -----------------------------------------------------
 
 import sys, os
-sys.path.insert(0, os.path.abspath('.'))
-exclude_patterns = ['zzz']
+sys.path.insert(0, os.path.abspath('./gwss'))
 
 numfig = True
 #language = 'ja'
