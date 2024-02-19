@@ -334,7 +334,8 @@ numfig = True
 
 extensions.append('sphinx.ext.todo')
 extensions.append('sphinx.ext.autodoc')
-#extensions.append('sphinx.ext.autosummary')
+extensions.append('sphinx.ext.napoleon')
+extensions.append('sphinx.ext.autosummary')
 extensions.append('sphinx.ext.intersphinx')
 extensions.append('sphinx.ext.mathjax')
 extensions.append('sphinx.ext.viewcode')
