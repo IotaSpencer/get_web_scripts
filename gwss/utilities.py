@@ -40,7 +40,7 @@ def squish_info(config) -> dict:
 
     return info_dict
 
-    # check if path exists
+# check if path exists
 def path_validation(path: str | os.PathLike | Path) -> bool:
     """
 
