@@ -1,0 +1,22 @@
+:py:mod:`gwss.resolver`
+=======================
+
+.. py:module:: gwss.resolver
+
+
+Module Contents
+---------------
+
+
+Functions
+~~~~~~~~~
+
+.. autoapisummary::
+
+   gwss.resolver.resolve_pkg
+
+
+
+.. py:function:: resolve_pkg(package: str) -> dict
+
+
