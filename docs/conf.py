@@ -78,7 +78,7 @@ language = 'en'
 # List of patterns, relative to source directory, that match files and
 # directories to ignore when looking for source files.
 # These patterns also affect html_static_path and html_extra_path
-exclude_patterns = ['_build', 'Thumbs.db', '.DS_Store']
+exclude_patterns = ['_build', 'Thumbs.db', '.DS_Store', 'docs/conf.py']
 
 # The reST default role (used for this markup: `text`) to use for all
 # documents.
@@ -330,7 +330,7 @@ sys.path.insert(0, os.path.abspath('./gwss'))
 
 numfig = True
 #language = 'ja'
-autoapi_dirs = ['']
+autoapi_dirs = ['gwss']
 extensions.append('sphinx.ext.todo')
 extensions.append('sphinx.ext.autodoc')
 extensions.append('sphinx.ext.napoleon')
@@ -340,7 +340,5 @@ extensions.append('sphinx.ext.mathjax')
 extensions.append('sphinx.ext.viewcode')
 extensions.append('autoapi.extension')
 extensions.append('sphinx.ext.graphviz')
-
-
 autosummary_generate = True
 #source_suffix = ['.rst', '.txt']
