@@ -330,7 +330,7 @@ sys.path.insert(0, os.path.abspath('./gwss'))
 
 numfig = True
 #language = 'ja'
-autoapi_dirs = ['gwss']
+autoapi_dirs = ['../gwss']
 extensions.append('sphinx.ext.todo')
 extensions.append('sphinx.ext.autodoc')
 extensions.append('sphinx.ext.napoleon')
