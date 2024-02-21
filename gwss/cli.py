@@ -39,15 +39,20 @@ def ls():
 @click.option('--dest-dir', '-d', default='.site')
 def resolve(dest_dir):
     resolve_cfg = resolver_config.projects
+    resolve_rendered ={}
     extension = ''
     for k, v in config.items():
         print("{}".format(v),)
-        resolve_pkg(v)
-    resolved_rendered = ''
-    click.echo(resolved_rendered)
+        package_dict = resolve_pkg(v)
+        package_parent_dir = package_dict['dir']
+        package_scripts = package_dict['scripts']
+        package_styles = package_dict['styles']
+        resolve_rendered[v] = {}
+
+    click.echo(resolve_rendered)
 
 @cli.command()
-@click.option('--dest-dir', '-d', default='.site')
+@click.option('--dest-dir', '-d', default=Path('./site'))
 def download(dest_dir):
     if path_validation(dest_dir):
         pass

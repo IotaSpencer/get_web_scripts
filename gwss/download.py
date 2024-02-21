@@ -5,22 +5,18 @@ from pathlib import Path
 import aiohttp
 from gwss.logger import logger
 
-async def download_file(url, package: str, filename: str, version: str, ext: str, dest_dir: os.PathLike):
+async def download_file(url, package: str, filename: os.PathLike, dest_dir: os.PathLike):
     """
 
     :param url:
     :param package: name of whole package
     :param filename: name of package file
-    :param version: version of package file
-    :param ext: extension
     :param dest_dir: destination of files downloaded
     :return:
     """
-    computed_filename = "%(name)s-%(version)s.%(ext)s".format(filename, version, ext)
-    assert Path(dest_dir).exists()
 
     dest_dir = Path(dest_dir)
-    dest_file = Path.joinpath(dest_dir,computed_filename )
+    dest_file = Path.joinpath(dest_dir,filename )
     logger.debug("Downloading file %(computed_filename)s to %(dest_file)s")
     async with aiohttp.ClientSession() as session:
         async with session.get(url) as response:
