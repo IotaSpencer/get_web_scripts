@@ -9,8 +9,11 @@ import pathlib
 from pathlib import Path
 from resolver_config import projects
 from unpkg import Unpkg
+from versions import get_latest
+
 def resolve_pkg(package: str) -> dict:
     # TODO: Also grab version from 'lastversion' to append to project render
+    prelim_package_version = get_latest(package=package)
     package_dict = {}
     try:
         package_dict = projects[package]
