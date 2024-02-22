@@ -20,7 +20,7 @@ async def download_file(url, dest_file: os.PathLike):
             if "content-disposition" in response.headers:
                 header = response.headers["content-disposition"]
                 file = dest_file
-                with open(file, mode="wb") as file:
+                with open(file, mode="w") as file:
                     while True:
                         chunk = await response.content.read()
                         if not chunk:
