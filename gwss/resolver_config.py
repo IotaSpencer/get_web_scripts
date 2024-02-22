@@ -33,11 +33,5 @@ projects = {
         'scripts': {
             'react': 'react.production.min.js'
         }
-    },
-    'tailwindcss': {
-        'dir': 'dist',
-        'styles': {
-            'tailwind': 'tailwind.css'
-        }
     }
 }

@@ -47,7 +47,7 @@ def path_validation(path: str | os.PathLike | Path) -> bool:
     :param path:
     :return: True
     """
-    return Path.exists(path, follow_symlinks=True)
+    return Path.exists(path)
 
 # if it doesn't, create it
 def path_create(path: str | os.PathLike | Path) -> bool:
