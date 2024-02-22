@@ -1,4 +1,5 @@
 .idea/
 .venv/
 gwss.egg-info/
+build/
 dist/
