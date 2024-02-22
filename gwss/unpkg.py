@@ -69,7 +69,7 @@ class Unpkg:
         """
         logger.debug(f"Downloading files from Unpkg")
         logger.debug(f'Trying to download {self.unpkg_url()} to {dest_file}')
-        asyncio.run(download_file(url=self.unpkg_url(), dest_file=dest_file))
+        asyncio.run(download_file(url=self.unpkg_url().url, dest_file=dest_file))
 
 
     def unpkg_url(self) -> furl:
