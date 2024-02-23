@@ -13,12 +13,7 @@ setup(
     long_description='get web scripts and styles',
     packages=['gwss'],
     install_requires=[
-        'lastversion~=3.4.6',
-        'aiohttp~=3.9.2',
-        'click~=8.1.7',
-        'pytest~=8.0.0',
-        'setuptools~=59.6.0',
-        'furl~=2.1.3'
+        *lines
     ],
     classifiers= [
         "Programming Language :: Python :: 3",
