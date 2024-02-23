@@ -2,9 +2,10 @@ import asyncio
 import os
 from pathlib import Path
 
-import aiohttp
+from requests_download import download, ProgressTracker
 from gwss.logger import logger
 
+#  See if I can use requests and requests_download
 async def download_file(url, dest_file: os.PathLike):
     """
 
@@ -13,17 +14,6 @@ async def download_file(url, dest_file: os.PathLike):
     :return:
     """
 
-
     logger.debug(f"Downloading file {url} to {dest_file}")
-    async with aiohttp.ClientSession() as session:
-        async with session.get(url) as response:
-            if "content-disposition" in response.headers:
-                header = response.headers["content-disposition"]
-                file = dest_file
-                with open(file, mode="w") as file:
-                    while True:
-                        chunk = await response.content.read()
-                        if not chunk:
-                            break
-                        file.write(chunk)
-                print(f"Downloaded file {file}")
+    download(url, dest_file, trackers=ProgressTracker)
+    print(f"Downloaded file {url}")
