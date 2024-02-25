@@ -1,5 +1,6 @@
 import asyncio
 from os import PathLike
+from pprint import pprint
 from typing import Any
 
 import click
@@ -78,9 +79,7 @@ class Unpkg:
         and extension.
 
         :return:
-        :param args: Positional arguments for directory and file.
-        :param kwargs: Keyword arguments for directory and file.
-        :return: The created URL as a string.
+       :return: The created URL as a string.
         """
         url = furl(self.base_url)
         # create url
