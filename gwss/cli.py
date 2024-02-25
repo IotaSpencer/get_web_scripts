@@ -9,7 +9,9 @@ from click import Context
 
 from gwss import gwss, resolver_config
 from gwss.config import config
+from gwss.logger import logger
 from gwss.resolver import resolve_pkg
+from gwss.resolver_config import projects
 from gwss.unpkg import Unpkg
 from gwss.utilities import prepare_config, path_validation, squish_info, path_create
 
@@ -52,8 +54,8 @@ def ls():
 @click.pass_context
 def resolve(ctx, dest_dir):
     resolve_rendered = {}
-    for root, projects in config.items():
-        for v_ in projects:
+    for root, projects_ in config.items():
+        for v_ in projects_:
             package_dict = resolve_pkg(v_)
             resolve_rendered[v_] = package_dict
     Site.last_result = resolve_rendered
@@ -69,19 +71,16 @@ def download(_ctx, dest_dir: Path | os.PathLike):
             pass
         else:
             path_create(dest_dir)
-        click.echo(f'Downloading all needed scripts and styles to {dest_dir}')
+        logger.info(f'Downloading all needed scripts and styles to {dest_dir}')
         for project, dict_ in result.items():
             version = dict_['version']
             urls = dict_['urls']
             dir_ = dict_['dir']
-            pprint(urls)
             for name, url_ in urls.items():
-                pprint(f"{name} -> {url_}")
                 name_file = name.split('.')[0]
                 name_ext = name.split('.')[1]
                 dest_file = Path(os.getcwd()).joinpath(dest_dir, f"{name_file}-{version}.{name_ext}")
-                pprint(dest_file)
-                file_ = Unpkg(project, version, dir_, name, name, None)
+                file_ = Unpkg(project, version, dir_, name, projects[project]['scripts' if name_ext == 'js' else 'styles'][name_file], None)
                 file_.unpkg_dl(url_, dest_file)
     else:
         click.secho(f"No previous results to use, use 'gwss resolve download'", err=True)
