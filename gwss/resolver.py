@@ -30,10 +30,6 @@ def resolve_pkg(package: str) -> dict[Any, Any]:
     rendered_links = dict(script_urls, **style_urls)
     package_dict['version'] = prelim_package_version
     package_dict['urls'] = rendered_links
-    if package_dict.__contains__('styles'):
-        del package_dict['styles']
-    if package_dict.__contains__('scripts'):
-        del package_dict['scripts']
     return package_dict
 
 def resolve_links(package, version: str, s_or_s: str, dir_: PathLike, links: dict):
