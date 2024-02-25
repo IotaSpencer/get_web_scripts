@@ -16,10 +16,10 @@ projects = {
             'bootstrap-utilities': 'css/bootstrap-utilities.min.css'
         }
     },
-    'htmx': {
-        'dir': '.',
+    'htmx.org': {
+        'dir': 'dist',
         'scripts': {
-            'htmx': 'htmx.js'
+            'htmx': 'htmx.min.js'
         }
     },
     'jquery': {
