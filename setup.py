@@ -2,7 +2,7 @@ from setuptools import setup
 lines = open('requirements.txt').read().splitlines()
 setup(
     name='gwss',
-    version='0.0.5',
+    version='0.0.6',
 
     url='',
     scripts=['bin/gwss'],
