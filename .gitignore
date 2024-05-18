@@ -3,3 +3,6 @@
 gwss.egg-info/
 build/
 dist/
+**/__pycache__/**
+*.pyc
+_build
