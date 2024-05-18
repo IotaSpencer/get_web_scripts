@@ -1,6 +1,0 @@
-:py:mod:`gwss.gwss`
-===================
-
-.. py:module:: gwss.gwss
-
-
